@@ -12,7 +12,7 @@ namespace console_basics_cs
         //   Initialize a Data Structure called hobby within the class
         private List<string> hobbies = new List<string>();
 
-        public static void main()
+        public static void main(string uname)
         {
             //  Ensures that the prompt one is the same as prompt two
             //ComparePrompts();
@@ -22,7 +22,7 @@ namespace console_basics_cs
 
             //  Generate a new Hobb
             FundamentalsCS fcs = new FundamentalsCS();
-            fcs.InteractiveHobbyGenerator();
+            fcs.InteractiveHobbyGenerator(uname);
 
             return;
         }
@@ -60,7 +60,7 @@ namespace console_basics_cs
             return false;
         }
 
-        internal void InteractiveHobbyGenerator()
+        internal void InteractiveHobbyGenerator(string uname)
         {
             Console.WriteLine("Would you like to generate a random hobby");
 
@@ -93,7 +93,7 @@ namespace console_basics_cs
                             Console.WriteLine("Thats alright, enough hobbies generated today !");
                             foreach (string element in hobbies)
                             {
-                                Console.WriteLine($", you enjoy {element}");
+                                Console.WriteLine($"{uname}, enjoys {element}");
                             }
                             break;
 

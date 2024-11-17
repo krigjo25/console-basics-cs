@@ -16,18 +16,18 @@ namespace console_basics_cs
         {
            //  Configurations for the console
            bool isRunning = true;
+            Console.WriteLine("Welcome to C# basics !");
+
+            //  Initializing the username
+            Console.WriteLine("What is your username?");
+            var uname = Console.ReadLine().ToString();
+            
+            //  Initializing the password
+            Console.WriteLine($"Greetings {uname} I'm pleased to meet you.\n What is your password?");
+            var pass = Console.ReadLine();
 
             while (isRunning)
             {
-                Console.WriteLine("Welcome to Introduction to C#");
-
-                //  Initializing the username
-                Console.WriteLine("What is your username?");
-                var uname = Console.ReadLine();
-
-                //  Initializing the password
-                Console.WriteLine($"Greetings {uname} I'm pleased to meet you.\n What is your password?");
-                var pass = Console.ReadLine();
 
                 Console.WriteLine($"How wonderful. Correct me if im wrong.. Your name is {uname}, and you can confirm its the right password?");
                 var confirm = Console.ReadLine();
@@ -39,6 +39,14 @@ namespace console_basics_cs
                 }
                 else
                 {
+                    //  Initializing the password
+                    Console.WriteLine($"Greetings {uname} I'm pleased to meet you.\n What is your password?");
+                    uname = Console.ReadLine().ToString();
+
+                    //  Initializing the password
+                    Console.WriteLine($"Greetings {uname} I'm pleased to meet you.\n What is your password?");
+                    pass = Console.ReadLine();
+
                     Console.WriteLine(" I'm sad to hear that it was wrong, but its okay. Lets try again");
                     continue;
                 }
@@ -47,7 +55,7 @@ namespace console_basics_cs
             //  Call Classes
             //  TypingValues.main();
             //  VariableAssignment.main();
-            FundamentalsCS.main();
+            FundamentalsCS.main(uname);
 
             Console.ReadKey();
 

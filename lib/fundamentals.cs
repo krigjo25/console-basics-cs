@@ -162,4 +162,112 @@ namespace console_basics_cs
 
         }
     }
+
+    internal class ifelseSwitch : FundamentalsCS
+    {
+
+        internal static void CalendarDays()
+        {
+            Console.WriteLine("Convert a date into a string. Using the metric date system e.g (17.11-2024)");
+            bool boolean = true;
+
+            while (boolean)
+            {
+                string date = Convert.ToString(Console.ReadLine());
+
+                // Ensure the date is not empty
+                if (date == " ")
+                {
+                    //  Prompt the user to enter a valid date
+                    Console.WriteLine("The date is null, enter a valid date");
+                }
+
+                //  Split the date into an array
+                string[] dateArray = date.Split('.', '-');
+
+                //  Call the method to handle the date
+
+                
+                //DateHandler(dateArray);
+                boolean = false;
+
+            }
+
+            // Ensure that the date is correctly formated
+
+            //  Split the string into an array
+
+
+            // Initialize a new switch statement
+            switch (DateTime.Now.Month)
+            {
+                case 1:
+                    Console.WriteLine("January");
+                    break;
+
+                case 2:
+                    Console.WriteLine("February");
+                    break;
+
+                case 3:
+                    Console.WriteLine("March");
+                    break;
+
+                case 4:
+                    Console.WriteLine("April");
+                    break;
+
+                case 5:
+                    Console.WriteLine("May");
+                    break;
+
+                case 6:
+                    Console.WriteLine("June");
+                    break;
+
+                case 7:
+                    Console.WriteLine("July");
+                    break;
+
+                case 8:
+                    Console.WriteLine("August");
+                    break;
+
+                case 9:
+                    Console.WriteLine("September");
+                    break;
+
+                case 10:
+                    Console.WriteLine("October");
+                    break;
+
+                case 11:
+                    Console.WriteLine("November");
+                    break;
+
+                case 12:
+                    Console.WriteLine("December");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid Month");
+                    break;
+            }
+        }
+
+        private dynamic DateHandler(string[] array)
+        {
+            if (array.Length != 3)
+            {
+                Console.WriteLine("Invalid date format");
+                return null;
+            }
+
+            //  Ensure the date is correctly formated array [0] = day, array[1] = month, array[2] = year
+
+            if (array[0].Length != 2 )
+
+            return array;
+        }
+    }
 }

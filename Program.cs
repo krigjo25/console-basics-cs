@@ -14,8 +14,8 @@ namespace console_basics_cs
 
         static void Main(string[] args)
         {
-           //  Configurations for the console
-           bool isRunning = true;
+            //  Configurations for the console
+            bool isRunning = true;
             Console.WriteLine("Welcome to C# basics !");
 
             //  Initializing the username
@@ -55,7 +55,7 @@ namespace console_basics_cs
             //  Call Classes
             //  TypingValues.main();
             //  VariableAssignment.main();
-            FundamentalsCS.main(uname);
+            //HobbyGenerator.main(uname);
 
             Console.ReadKey();
 

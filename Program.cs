@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading;
+using System.Runtime.Remoting.Messaging;
 
 namespace console_basics_cs
 {
@@ -14,7 +16,7 @@ namespace console_basics_cs
 
         static void Main(string[] args)
         {
-            //  Configurations for the console
+            //  Console Configurations
             bool isRunning = true;
             Console.WriteLine("Welcome to C# basics !");
 
@@ -34,7 +36,7 @@ namespace console_basics_cs
 
                 if (confirm == "yes" || confirm == "y" || confirm == "ye")
                 {
-                    Console.WriteLine($"How awesome, i'm happy i had the chance to meet you ! {uname}\n press any key to continue");
+                    Console.WriteLine($"How awesome, i'm happy i had the chance to meet you ! {uname}");
                     isRunning = false;
                 }
                 else
@@ -53,14 +55,56 @@ namespace console_basics_cs
             }
 
             //  Call Classes
-            //  TypingValues.main();
-            //  VariableAssignment.main();
-            //HobbyGenerator.main(uname);
+            TypingValues.main();
+            VariableAssignment.main();
+            HobbyGenerator.main(uname);
+            TextManipulations.ConsoleMenu(uname);
+            CharacterCount();
 
-            Console.ReadKey();
+            Console.WriteLine("Thank you for using this program. Good bye have a nice day.");
+            Thread.Sleep(10000);
 
             return;
         }
+        public static void CharacterCount()
+        {
+            /*
+                A program that counts characters
+                
+             */
+            // Adopted from https://github.com/GetAcademy/CountCharacters
+
+            //  Initializing variables
+            const int n = 250;
+            var counts = new int[n];
+            string text = "sometext";
+
+            while (text != null)
+            {
+                //  Initialize a user input
+                text = Console.ReadLine();
+
+                //  linear algortihm n * text
+                foreach (var character in text ?? String.Empty)
+                {
+                    // Casting an integer from char into int
+
+                    counts[(int)Char.ToLower(character)]++;
+                }
+                for (var i = 0; i < n; i++)
+                {
+                    //  Ensure that Counts is greater than o
+                    if (counts[i] > 0)
+                    {
+                        //  Initialize a character from numbers
+                        var character = (char)i;
+                        Console.WriteLine($"Char ->total -> Procentage of txt");
+                        Console.WriteLine($"{character} -> {counts[i]} -> {Matte.Procent(counts[i], counts)}%");
+                    }
+                }
+            }
+        }
+
     }
 
     //  A Public class that inherits from ConsoelApp
@@ -143,4 +187,5 @@ namespace console_basics_cs
             return "Hello World !";
         }
     }
+
 }

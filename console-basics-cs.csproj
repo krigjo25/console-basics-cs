@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\fundamentals.cs" />
+    <Compile Include="lib\math.cs" />
+    <Compile Include="lib\text-manipulation.cs" />
+    <Compile Include="lib\trafficlights.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Xml.Schema;
+using System.Threading;
 
 namespace console_basics_cs
 {
@@ -77,7 +78,7 @@ namespace console_basics_cs
             if (date[0] > 31 && date[0] < 1)
             {
                 //  Februrary has 28 days
-                if (date[1] == 2 && date[0] > 28)
+                if (date[1] is 2 && date[0] > 28)
                 {
                     //  Ensure the year is not a leap year
 
@@ -159,7 +160,7 @@ namespace console_basics_cs
 
             Console.Write("Does not equal to 30");
         }
-
+        
     }
     internal class HobbyGenerator: Base
     {
@@ -170,18 +171,18 @@ namespace console_basics_cs
         public static void main(string uname)
         {
 
-            //  Ensures that the prompt one is the same as prompt two
-            ComparePrompts();
+           //  Ensures that the prompt one is the same as prompt two
+           ComparePrompts();
 
-            //  Guess the number between 10 and 30
-            Base.GuessTheNUmber();
+           //  Guess the number between 10 and 30
+           Base.GuessTheNUmber();
 
             //  Generate a new Hobb
            InteractiveHobbyGenerator(uname);
 
 
-            //  Calendar Days
-            Conditions.CalendarDays();
+           //  Calendar Days
+           Conditions.CalendarDays();
 
             return;
         }
@@ -251,8 +252,8 @@ namespace console_basics_cs
         private const int max_date_value = 3;
 
         internal static void CalendarDays()
-
         {
+
             //  Initialize a new instance of the class
             Base bs = new Base();
 
@@ -479,7 +480,9 @@ namespace console_basics_cs
         }
 
 
+
     //  End of class
     }
+
     //  End of namespace
 }
